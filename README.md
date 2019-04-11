@@ -6,5 +6,6 @@ Features are added as needed.
 
 ## Current Features
 
+* `join`
 * `normpath`
 

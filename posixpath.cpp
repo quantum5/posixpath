@@ -23,6 +23,17 @@ std::string string_join(Range const& elements, const char * delimiter) {
 }
 
 namespace posixpath {
+    std::string join(const std::string &parent, const std::string &child) {
+        if (!child.empty() && child[0] == '/') {
+            return child;
+        }
+        if (parent.empty() || parent.back() == '/') {
+            return parent + child;
+        } else {
+            return parent + "/" + child;
+        }
+    }
+
     std::string normpath(const std::string &path) {
         if (path.empty()) {
             return ".";
